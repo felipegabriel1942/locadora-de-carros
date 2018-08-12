@@ -10,7 +10,7 @@ public class EntityManagerUtil {
 	
 	public static EntityManager getEntityManager() {
 		if(emf == null) {
-			emf = Persistence.createEntityManagerFactory("hibernatejpa");
+			emf = Persistence.createEntityManagerFactory("mysql5");
 		}
 		
 		if(em == null) {

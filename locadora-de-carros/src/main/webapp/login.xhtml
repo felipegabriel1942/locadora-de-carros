@@ -6,14 +6,36 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="estilo.css"/>
 	<title></title>
 
 </h:head>
 <h:body>
+	<p:tooltip />
 	<h:form>
-		
-	
+		<p:messages id="mensagens" showDetail="true" closable="true">
+			<p:autoUpdate />
+		</p:messages>
 	</h:form>
 
+	<div class="container">
+		<h:form styleClass="caixaLogin">
+			<h:panelGrid id="grid" columns="2" cellpadding="5"
+				style="margin-bottom:10px;">
+				<p:outputLabel for="login" value="Login:" />
+				<p:inputText id="login" value="#{controleUsuario.usuarioTela}" />
+
+				<p:outputLabel for="senha" value="Senha:" />
+				<p:password id="senha" value="#{controleUsuario.senhaTela}" />
+			</h:panelGrid>
+
+			<h:panelGrid columns="2" cellpadding="5">
+				<p:commandButton value="Limpar" icon="ui-icon-closethick"
+					actionListener="#{controleUsuario.limparCampos()}" update="grid" />
+				<p:commandButton value="Logar" icon="ui-icon-check"
+					action="#{controleUsuario.efetuarLogin()}" ajax="false" />
+			</h:panelGrid>
+		</h:form>
+	</div>
 </h:body>
 </html>
