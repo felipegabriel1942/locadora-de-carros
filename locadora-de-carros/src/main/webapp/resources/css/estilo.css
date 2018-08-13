@@ -17,3 +17,13 @@ body{
 	height: 150px;
 	background: #fff;
 }
+
+
+/*Tabelas Primefaces*/
+.semBorda tr, .semBorda td {
+	border: none !important;
+}
+
+.posPainelPrimefaces {
+	margin-top: 30px;
+}

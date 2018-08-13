@@ -7,14 +7,15 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-	<title></title>
+	<title>Locadora X</title>
+	<h:outputStylesheet library="css" name="estilo.css"/>
 
 </h:head>
 <h:body>
 	<h:form>
 		<p:menubar>
 			<p:submenu label="Cliente" icon="ui-icon-person">
-				<p:menuitem value="Cadastro" icon="ui-icon-plus" />
+				<p:menuitem value="Cadastro" icon="ui-icon-plus" url="/privado/cliente/cadastro.xhtml"/>
 				<p:menuitem value="Editar" icon="ui-icon-refresh" />
 				<p:menuitem value="Pesquisar" icon="ui-icon-search" />
 				<p:menuitem value="Excluir" icon="ui-icon-cancel" />

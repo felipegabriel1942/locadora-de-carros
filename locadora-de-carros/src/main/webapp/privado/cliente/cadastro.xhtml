@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="estilo.css" />
+	<title></title>
+
+</h:head>
+<h:body>
+	<div id="menuPrincipal">
+		<ui:include src="/templates/menu.xhtml" />
+	</div>
+
+	<p:panel header="Cadastro clientes" styleClass="posPainelPrimefaces">
+		<p:panelGrid columns="2" styleClass="semBorda">
+			<p:outputLabel value="Nome: " for="nome" />
+			<p:inputText id="nome" size="50" maxlength="80" />
+
+			<p:outputLabel value="CPF: " for="cpf" />
+			<p:inputMask mask="999.999.999-99" id="cpf" />
+
+			<p:outputLabel value="Data de nascimento: " for="nascimento" />
+			<p:calendar id="nascimento" pattern="dd/MM/yyyy" mask="true"
+				navigator="true" yearRange="c-70:c+10" />
+
+			<p:outputLabel value="Telefone: " for="telefone" />
+			<p:inputMask id="telefone" mask="(99)99999-9999" />
+
+			<p:outputLabel value="Email: " for="email" />
+			<p:inputText id="email" size="50" maxlength="80" />
+			
+			<p:commandButton value="Limpar Campos"/>
+			<p:commandButton value="Cadastrar"/>			
+		</p:panelGrid>
+
+	</p:panel>
+</h:body>
+</html>
