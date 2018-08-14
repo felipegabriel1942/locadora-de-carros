@@ -15,7 +15,7 @@
 	<h:form>
 		<p:menubar>
 			<p:submenu label="Cliente" icon="ui-icon-person">
-				<p:menuitem value="Cadastro" icon="ui-icon-plus" url="/privado/cliente/cadastro.xhtml"/>
+				<p:menuitem value="Cadastro" icon="ui-icon-plus" action="#{controleCliente.novoCliente()}" />
 				<p:menuitem value="Editar" icon="ui-icon-refresh" />
 				<p:menuitem value="Pesquisar" icon="ui-icon-search" />
 				<p:menuitem value="Excluir" icon="ui-icon-cancel" />

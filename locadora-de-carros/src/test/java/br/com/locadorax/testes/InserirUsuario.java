@@ -11,7 +11,7 @@ public class InserirUsuario {
 		EntityManager em = EntityManagerUtil.getEntityManager();
 		Usuario u = new Usuario();
 		u.setAtivo(true);
-		u.setNomeUsuario("felipe_gabriel");
+		u.setNomeUsuario("Felipe Gabriel");
 		u.setSenha("123456");
 		u.setPermissao("Administrador");
 		em.getTransaction().begin();

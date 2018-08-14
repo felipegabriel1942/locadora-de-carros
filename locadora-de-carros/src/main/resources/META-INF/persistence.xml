@@ -4,29 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 
-	<persistence-unit name="mysql8"
-		transaction-type="RESOURCE_LOCAL">
-		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
-		<properties>
-			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/locadorax?useTimezone=true&amp;serverTimezone=UTC" />
-			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password"
-				value="battlefield1942" />
-			<property name="javax.persistence.jdbc.driver"
-				value="com.mysql.cj.jdbc.Driver" />
-
-			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.MySQL5Dialect" />
-			<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" />
-			<property name="hibernate.hbm2ddl.auto" value="update" />
-		</properties>
-	</persistence-unit>
-	
+		
 	<!-- PARA CONEXÃO COM O MYSQL 5 -->
-	<persistence-unit name="mysql5"
+	<persistence-unit name="mysqljpa"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 				
@@ -36,7 +16,7 @@
 				value="jdbc:mysql://localhost:3306/locadorax?createDatabaseIfNotExist=true" />
 			<property name="javax.persistence.jdbc.user" value="root" />
 			<property name="javax.persistence.jdbc.password"
-				value="amor1805" />
+				value="battlefield1942" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 
