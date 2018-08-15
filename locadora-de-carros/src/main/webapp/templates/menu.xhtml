@@ -8,18 +8,33 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Locadora X</title>
-	<h:outputStylesheet library="css" name="estilo.css"/>
+	<h:outputStylesheet library="css" name="estilo.css" />
 
 </h:head>
 <h:body>
 	<h:form>
 		<p:menubar>
 			<p:submenu label="Cliente" icon="ui-icon-person">
-				<p:menuitem value="Cadastro" icon="ui-icon-plus" action="#{controleCliente.novoCliente()}" />
+				<p:menuitem value="Cadastro" icon="ui-icon-plus"
+					action="#{controleCliente.novoCliente()}" />
 				<p:menuitem value="Editar" icon="ui-icon-refresh" />
 				<p:menuitem value="Pesquisar" icon="ui-icon-search" />
 				<p:menuitem value="Excluir" icon="ui-icon-cancel" />
+				<p:menuitem value="Listar" icon="ui-icon-script"
+					action="#{controleCliente.listarCliente()}" />
 			</p:submenu>
+
+			<p:submenu label="Carros" icon="ui-icon-wrench">
+				<p:menuitem value="Cadastro" icon="ui-icon-plus" />
+				<p:menuitem value="Editar" icon="ui-icon-refresh" />
+				<p:menuitem value="Pesquisar" icon="ui-icon-search" />
+				<p:menuitem value="Excluir" icon="ui-icon-cancel" />
+				<p:menuitem value="Listar" icon="ui-icon-script" />
+			</p:submenu>
+			
+			<f:facet name="options">
+				<p:commandButton type="button" value="Sair" styleClass="ui-priority-primary"/>
+			</f:facet>
 		</p:menubar>
 	</h:form>
 </h:body>

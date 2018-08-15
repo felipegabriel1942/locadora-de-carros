@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class MetodosUtil {
 
-	public static String gerarCPF() {
+	public String gerarCPF() {
 
 		// Atributos
 		int somatorio = 0;
@@ -63,7 +63,7 @@ public class MetodosUtil {
 		return converteListaCPFEmString(listaDeNumeros);
 	}
 
-	public static String converteListaCPFEmString(List<Integer> lista) {
+	public String converteListaCPFEmString(List<Integer> lista) {
 		List<String> listaCPFString = new ArrayList<String>();
 		String cpfString = "";
 

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="estilo.css" />
+	<title></title>
+
+</h:head>
+<h:body>
+	<div id="menuPrincipal">
+		<ui:include src="/templates/menu.xhtml" />
+	</div>
+
+	<h:form>
+		<p:dataTable var="cliente"
+			value="#{controleCliente.clienteDAO.listar()}" style="width:1300px;margin-top: 30px;">
+			<f:facet name="header">Lista de clientes cadastrados</f:facet>
+
+			<p:column headerText="Id" style="width:15px;">
+				<h:outputText value="#{cliente.id}" />
+			</p:column>
+
+			<p:column headerText="Nome" style="width:300px;">
+				<h:outputText value="#{cliente.nomeCliente}" />
+			</p:column>
+
+			<p:column headerText="Data de Nascimento" style="width:200px;">
+				<h:outputText value="#{cliente.dataNascimentoCliente}">
+					<f:converter converterId="converterCalendar" />
+				</h:outputText>
+			</p:column>
+
+			<p:column headerText="CPF" style="width:150px;">
+				<h:outputText value="#{cliente.cpfCliente}" />
+			</p:column>
+
+			<p:column headerText="Telefone" style="width:150px;">
+				<h:outputText value="#{cliente.telefoneCliente}" />
+			</p:column>
+
+			<p:column headerText="Email" style="width:300px;">
+				<h:outputText value="#{cliente.emailCliente}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
