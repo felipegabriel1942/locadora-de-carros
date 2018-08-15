@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<h:outputStylesheet library="css" name="estilo.css" />
+	<title></title>
+
+</h:head>
+<h:body>
+	<div id="menuPrincipal">
+		<ui:include src="/templates/menu.xhtml" />
+	</div>
+	<h:form>
+		<p:messages closable="true">
+			<p:autoUpdate />
+		</p:messages>
+		<p:panel header="Cadastro carros" styleClass="posPainelPrimefaces">
+			<p:panelGrid columns="2" styleClass="semBorda" id="formCarro">
+				<p:outputLabel value="Modelo" for="modelo" />
+				<p:inputText id="modelo" value="#{controleCarro.carro.modeloCarro}"
+					size="60" />
+
+				<p:outputLabel value="Ano" for="ano" />
+				<p:inputMask id="ano" mask="9999/9999"
+					value="#{controleCarro.carro.anoCarro}" />
+
+				<p:outputLabel value="Fabricante" for="fabricante" />
+				<p:inputText id="fabricante"
+					value="#{controleCarro.carro.fabricanteCarro}" />
+
+				<p:outputLabel value="Placa do Carro" for="placa" />
+				<p:inputMask mask="aaa-9999" id="placa"
+					value="#{controleCarro.carro.placaCarro}" />
+
+				<p:outputLabel value="Preço diária" for="preco" />
+				<p:inputMask mask="9999.99"
+					value="#{controleCarro.carro.precoDiariaCarro}" id="preco" />
+
+				<p:outputLabel value="Imagem do carro" for="imagem" />
+				<p:fileUpload id="imagem" mode="simple" label="Selecionar"
+					auto="true" fileUploadListener="#{controleCarro.enviarFoto}"
+					allowTypes="/(\.|\/)(gif|jpe?g|png)$/" ajax="false" />
+
+				<p:commandButton value="Limpar Campos" />
+
+				<p:commandButton value="Cadastrar"
+					actionListener="#{controleCarro.cadastrarCarro}" update="formCarro" />
+			</p:panelGrid>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>
